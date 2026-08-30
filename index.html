@@ -15,20 +15,23 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0d1b21;
-    --bg-alt:rgba(47,127,146,0.06);
-    --panel:rgba(28,48,54,0.55);
-    --line:rgba(201,150,61,0.16);
-    --ink:#e7eef0;
-    --ink-dim:#b9c8cc;
-    --ink-faint:#7f9498;
-    --primary:#2f8fa3;
-    --primary-soft:rgba(47,143,163,0.16);
-    --gold:#c9963d;
-    --gold-soft:rgba(201,150,61,0.18);
-    --rust:#a0522d;
+    --bg:#f8f5ee;
+    --bg-alt:rgba(31,122,140,0.05);
+    --panel:rgba(255,255,255,0.68);
+    --line:rgba(31,60,66,0.13);
+    --ink:#1f2e33;
+    --ink-dim:#51656c;
+    --ink-faint:#84959a;
+    --primary:#1f7a8c;
+    --primary-soft:rgba(31,122,140,0.10);
+    --gold:#a9762a;
+    --gold-soft:rgba(169,118,42,0.12);
+    --rust:#8a4423;
     --deep:#122229;
-    --shadow: 0 20px 50px rgba(0,0,0,0.45);
+    --shadow: 0 20px 50px rgba(20,40,45,0.10);
+    --hero-ink:#f7f4ec;
+    --hero-dim:#d7dfe1;
+    --hero-gold:#e7c07a;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   html{scroll-behavior:smooth;}
@@ -38,13 +41,13 @@
     line-height:1.85;
     font-weight:300;
     background:
-      radial-gradient(ellipse 60% 45% at 8% 4%, rgba(47,143,163,0.30), transparent 60%),
-      radial-gradient(ellipse 55% 50% at 96% 14%, rgba(201,150,61,0.26), transparent 62%),
-      radial-gradient(ellipse 55% 45% at 90% 46%, rgba(47,143,163,0.24), transparent 60%),
-      radial-gradient(ellipse 60% 50% at 2% 56%, rgba(160,82,45,0.18), transparent 62%),
-      radial-gradient(ellipse 55% 45% at 94% 82%, rgba(201,150,61,0.20), transparent 60%),
-      radial-gradient(ellipse 60% 45% at 6% 96%, rgba(47,143,163,0.26), transparent 60%),
-      linear-gradient(180deg, #122229 0%, #0f1e24 40%, #0a1418 100%);
+      radial-gradient(ellipse 60% 45% at 8% 4%, rgba(31,122,140,0.10), transparent 60%),
+      radial-gradient(ellipse 55% 50% at 96% 14%, rgba(169,118,42,0.10), transparent 62%),
+      radial-gradient(ellipse 55% 45% at 90% 46%, rgba(31,122,140,0.08), transparent 60%),
+      radial-gradient(ellipse 60% 50% at 2% 56%, rgba(138,68,35,0.06), transparent 62%),
+      radial-gradient(ellipse 55% 45% at 94% 82%, rgba(169,118,42,0.08), transparent 60%),
+      radial-gradient(ellipse 60% 45% at 6% 96%, rgba(31,122,140,0.10), transparent 60%),
+      linear-gradient(180deg, #fbf9f3 0%, #f8f5ee 40%, #f3efe4 100%);
     background-attachment:fixed;
   }
   h1,h2,h3,h4{
@@ -89,48 +92,49 @@
     font-family:"Noto Serif TC", serif;
     font-size:0.85rem;
     letter-spacing:0.35em;
-    color:var(--gold);
+    color:var(--hero-gold);
     margin-bottom:22px;
     text-transform:uppercase;
   }
-  .hero-eyebrow::before{content:"—"; color:var(--primary);}
+  .hero-eyebrow::before{content:"—"; color:var(--hero-gold);}
   .hero h1{
     font-size:clamp(2.6rem, 7vw, 5.2rem);
     line-height:1.05;
     margin-bottom:18px;
+    color:var(--hero-ink);
     text-shadow:0 6px 30px rgba(0,0,0,0.6);
   }
   .hero h1 small{
     display:block;
     font-size:0.32em;
     font-weight:400;
-    color:var(--ink-dim);
+    color:var(--hero-dim);
     letter-spacing:0.2em;
     margin-top:14px;
   }
   .hero-desc{
     max-width:600px;
-    color:var(--ink-dim);
+    color:var(--hero-dim);
     font-size:1.05rem;
     margin-bottom:28px;
   }
   .hero-tags{display:flex; flex-wrap:wrap; gap:10px;}
   .tag{
-    border:1px solid var(--line);
+    border:1px solid rgba(247,244,236,0.3);
     padding:6px 16px;
     border-radius:999px;
     font-size:0.82rem;
-    color:var(--ink-dim);
+    color:var(--hero-dim);
     background:rgba(0,0,0,0.25);
     backdrop-filter:blur(4px);
   }
   .scroll-cue{
     position:absolute; bottom:26px; left:50%; transform:translateX(-50%);
-    z-index:2; color:var(--ink-faint); font-size:0.75rem; letter-spacing:0.2em;
+    z-index:2; color:var(--hero-dim); font-size:0.75rem; letter-spacing:0.2em;
     display:flex; flex-direction:column; align-items:center; gap:8px;
   }
   .scroll-cue span{
-    width:1px; height:34px; background:linear-gradient(var(--gold), transparent);
+    width:1px; height:34px; background:linear-gradient(var(--hero-gold), transparent);
     animation:scrollpulse 2s ease-in-out infinite;
   }
   @keyframes scrollpulse{0%,100%{opacity:0.2;}50%{opacity:1;}}
@@ -238,9 +242,9 @@
   }
   .banner .wrap{position:relative; z-index:2;}
   .banner-box{max-width:490px;}
-  .banner-box .kicker{color:var(--gold);}
-  .banner-box h2{font-size:clamp(1.7rem,3.4vw,2.3rem); margin-bottom:16px;}
-  .banner-box p{color:var(--ink-dim);}
+  .banner-box .kicker{color:var(--hero-gold);}
+  .banner-box h2{font-size:clamp(1.7rem,3.4vw,2.3rem); margin-bottom:16px; color:var(--hero-ink);}
+  .banner-box p{color:var(--hero-dim);}
 
   /* ---------- Guide cards ---------- */
   .guide-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
@@ -286,7 +290,7 @@
 
   /* ---------- Footer ---------- */
   footer{
-    background:#0a1418; padding:60px 0 34px; border-top:1px solid var(--line);
+    background:#efe9da; padding:60px 0 34px; border-top:1px solid var(--line);
   }
   footer .wrap{display:flex; flex-direction:column; gap:18px; align-items:flex-start;}
   footer h3{font-size:1.3rem;}
@@ -615,34 +619,34 @@
         <path d="M160,45 Q100,110 135,160 Q175,215 175,265 Q175,315 140,370 Q100,425 145,480 Q185,530 160,590 Q140,635 170,660" fill="none" stroke="rgba(201,150,61,0.35)" stroke-width="3" stroke-linecap="round" stroke-dasharray="1,10"/>
 
         <circle cx="160" cy="45" r="17" fill="rgba(201,150,61,0.16)" stroke="#c9963d" stroke-width="2"/>
-        <text x="160" y="50" text-anchor="middle" font-size="15" font-weight="700" fill="#c9963d" font-family="'Noto Serif TC',serif">1</text>
-        <text x="190" y="41" font-size="14" font-weight="700" fill="#e7eef0" font-family="'Noto Serif TC',serif">富山駅北口</text>
-        <text x="190" y="61" font-size="11.5" fill="#7f9498">出發點・步行10分</text>
+        <text x="160" y="50" text-anchor="middle" font-size="15" font-weight="700" fill="#a9762a" font-family="'Noto Serif TC',serif">1</text>
+        <text x="190" y="41" font-size="14" font-weight="700" fill="#1f2e33" font-family="'Noto Serif TC',serif">富山駅北口</text>
+        <text x="190" y="61" font-size="11.5" fill="#61747a">出發點・步行10分</text>
 
         <circle cx="135" cy="160" r="17" fill="rgba(201,150,61,0.16)" stroke="#c9963d" stroke-width="2"/>
-        <text x="135" y="165" text-anchor="middle" font-size="15" font-weight="700" fill="#c9963d" font-family="'Noto Serif TC',serif">2</text>
-        <text x="165" y="156" font-size="14" font-weight="700" fill="#e7eef0" font-family="'Noto Serif TC',serif">天門橋</text>
-        <text x="165" y="176" font-size="11.5" fill="#7f9498">公園地標橋</text>
+        <text x="135" y="165" text-anchor="middle" font-size="15" font-weight="700" fill="#a9762a" font-family="'Noto Serif TC',serif">2</text>
+        <text x="165" y="156" font-size="14" font-weight="700" fill="#1f2e33" font-family="'Noto Serif TC',serif">天門橋</text>
+        <text x="165" y="176" font-size="11.5" fill="#61747a">公園地標橋</text>
 
         <circle cx="175" cy="265" r="17" fill="rgba(201,150,61,0.16)" stroke="#c9963d" stroke-width="2"/>
-        <text x="175" y="270" text-anchor="middle" font-size="15" font-weight="700" fill="#c9963d" font-family="'Noto Serif TC',serif">3</text>
-        <text x="205" y="261" font-size="14" font-weight="700" fill="#e7eef0" font-family="'Noto Serif TC',serif">星巴克環水公園店</text>
-        <text x="205" y="281" font-size="11.5" fill="#7f9498">世界最美星巴克</text>
+        <text x="175" y="270" text-anchor="middle" font-size="15" font-weight="700" fill="#a9762a" font-family="'Noto Serif TC',serif">3</text>
+        <text x="205" y="261" font-size="14" font-weight="700" fill="#1f2e33" font-family="'Noto Serif TC',serif">星巴克環水公園店</text>
+        <text x="205" y="281" font-size="11.5" fill="#61747a">世界最美星巴克</text>
 
         <circle cx="140" cy="370" r="17" fill="rgba(47,143,163,0.18)" stroke="#2f8fa3" stroke-width="2"/>
-        <text x="140" y="375" text-anchor="middle" font-size="15" font-weight="700" fill="#2f8fa3" font-family="'Noto Serif TC',serif">4</text>
-        <text x="170" y="366" font-size="14" font-weight="700" fill="#e7eef0" font-family="'Noto Serif TC',serif">搭乘富岩水上ライン</text>
-        <text x="170" y="386" font-size="11.5" fill="#7f9498">乘船出發</text>
+        <text x="140" y="375" text-anchor="middle" font-size="15" font-weight="700" fill="#1f7a8c" font-family="'Noto Serif TC',serif">4</text>
+        <text x="170" y="366" font-size="14" font-weight="700" fill="#1f2e33" font-family="'Noto Serif TC',serif">搭乘富岩水上ライン</text>
+        <text x="170" y="386" font-size="11.5" fill="#61747a">乘船出發</text>
 
         <circle cx="145" cy="480" r="17" fill="rgba(47,143,163,0.18)" stroke="#2f8fa3" stroke-width="2"/>
-        <text x="145" y="485" text-anchor="middle" font-size="15" font-weight="700" fill="#2f8fa3" font-family="'Noto Serif TC',serif">5</text>
-        <text x="175" y="476" font-size="14" font-weight="700" fill="#e7eef0" font-family="'Noto Serif TC',serif">中島閘門</text>
-        <text x="175" y="496" font-size="11.5" fill="#7f9498">水位升降體驗</text>
+        <text x="145" y="485" text-anchor="middle" font-size="15" font-weight="700" fill="#1f7a8c" font-family="'Noto Serif TC',serif">5</text>
+        <text x="175" y="476" font-size="14" font-weight="700" fill="#1f2e33" font-family="'Noto Serif TC',serif">中島閘門</text>
+        <text x="175" y="496" font-size="11.5" fill="#61747a">水位升降體驗</text>
 
         <circle cx="170" cy="660" r="18" fill="rgba(178,58,46,0.16)" stroke="#a0522d" stroke-width="2.5"/>
-        <text x="170" y="665" text-anchor="middle" font-size="15" font-weight="700" fill="#a0522d" font-family="'Noto Serif TC',serif">6</text>
-        <text x="200" y="656" font-size="14" font-weight="700" fill="#e7eef0" font-family="'Noto Serif TC',serif">岩瀬老街</text>
-        <text x="200" y="676" font-size="11.5" fill="#7f9498">終點・北前船港町</text>
+        <text x="170" y="665" text-anchor="middle" font-size="15" font-weight="700" fill="#8a4423" font-family="'Noto Serif TC',serif">6</text>
+        <text x="200" y="656" font-size="14" font-weight="700" fill="#1f2e33" font-family="'Noto Serif TC',serif">岩瀬老街</text>
+        <text x="200" y="676" font-size="11.5" fill="#61747a">終點・北前船港町</text>
       </svg>
       <p class="map-caption">從富山駅步行至環水公園，搭遊船通過中島閘門後抵達岩瀬，實際航班時刻請以富岩水上ライン官網公告為準。</p>
     </div>
