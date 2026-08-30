@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>富岩運河｜從防洪運河到世界最美星巴克的百年蛻變</title>
+<meta name="description" content="富岩運河完整身世：因水患而分縣建省的富山、赤司貫一的三合一都市計畫、中島閘門「水のエレベーター」、貯木場衰退到環水公園重生、富岩水上ライン與岩瀬老街散策攻略。">
+<meta property="og:title" content="富岩運河｜從防洪運河到世界最美星巴克的百年蛻變">
+<meta property="og:description" content="一座因水患而獨立建省的城市，把治水工程蓋成了新市區，又把沒落的工業運河，改造成世界最美星巴克。">
+<meta property="og:image" content="https://maskywg.github.io/fugan-canal/images/hero-canal.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0d1b21;
+    --bg-alt:rgba(47,127,146,0.06);
+    --panel:rgba(28,48,54,0.55);
+    --line:rgba(201,150,61,0.16);
+    --ink:#e7eef0;
+    --ink-dim:#b9c8cc;
+    --ink-faint:#7f9498;
+    --primary:#2f8fa3;
+    --primary-soft:rgba(47,143,163,0.16);
+    --gold:#c9963d;
+    --gold-soft:rgba(201,150,61,0.18);
+    --rust:#a0522d;
+    --deep:#122229;
+    --shadow: 0 20px 50px rgba(0,0,0,0.45);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    color:var(--ink);
+    font-family:"Noto Sans TC", sans-serif;
+    line-height:1.85;
+    font-weight:300;
+    background:
+      radial-gradient(ellipse 60% 45% at 8% 4%, rgba(47,143,163,0.30), transparent 60%),
+      radial-gradient(ellipse 55% 50% at 96% 14%, rgba(201,150,61,0.26), transparent 62%),
+      radial-gradient(ellipse 55% 45% at 90% 46%, rgba(47,143,163,0.24), transparent 60%),
+      radial-gradient(ellipse 60% 50% at 2% 56%, rgba(160,82,45,0.18), transparent 62%),
+      radial-gradient(ellipse 55% 45% at 94% 82%, rgba(201,150,61,0.20), transparent 60%),
+      radial-gradient(ellipse 60% 45% at 6% 96%, rgba(47,143,163,0.26), transparent 60%),
+      linear-gradient(180deg, #122229 0%, #0f1e24 40%, #0a1418 100%);
+    background-attachment:fixed;
+  }
+  h1,h2,h3,h4{
+    font-family:"Noto Serif TC", serif;
+    font-weight:700;
+    color:var(--ink);
+    letter-spacing:0.02em;
+  }
+  a{color:var(--gold);}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 24px;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    align-items:flex-end;
+    background:#000;
+    overflow:hidden;
+  }
+  .hero img{
+    position:absolute; inset:0;
+    width:100%; height:100%;
+    object-fit:cover;
+    opacity:0.82;
+  }
+  .hero::after{
+    content:"";
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(8,14,16,0.35) 0%, rgba(8,14,16,0.25) 35%, rgba(8,14,16,0.95) 100%);
+  }
+  .hero-content{
+    position:relative; z-index:2;
+    width:100%;
+    padding:0 24px 7vh;
+    max-width:1080px;
+    margin:0 auto;
+  }
+  .hero-eyebrow{
+    display:inline-flex; align-items:center; gap:10px;
+    font-family:"Noto Serif TC", serif;
+    font-size:0.85rem;
+    letter-spacing:0.35em;
+    color:var(--gold);
+    margin-bottom:22px;
+    text-transform:uppercase;
+  }
+  .hero-eyebrow::before{content:"—"; color:var(--primary);}
+  .hero h1{
+    font-size:clamp(2.6rem, 7vw, 5.2rem);
+    line-height:1.05;
+    margin-bottom:18px;
+    text-shadow:0 6px 30px rgba(0,0,0,0.6);
+  }
+  .hero h1 small{
+    display:block;
+    font-size:0.32em;
+    font-weight:400;
+    color:var(--ink-dim);
+    letter-spacing:0.2em;
+    margin-top:14px;
+  }
+  .hero-desc{
+    max-width:600px;
+    color:var(--ink-dim);
+    font-size:1.05rem;
+    margin-bottom:28px;
+  }
+  .hero-tags{display:flex; flex-wrap:wrap; gap:10px;}
+  .tag{
+    border:1px solid var(--line);
+    padding:6px 16px;
+    border-radius:999px;
+    font-size:0.82rem;
+    color:var(--ink-dim);
+    background:rgba(0,0,0,0.25);
+    backdrop-filter:blur(4px);
+  }
+  .scroll-cue{
+    position:absolute; bottom:26px; left:50%; transform:translateX(-50%);
+    z-index:2; color:var(--ink-faint); font-size:0.75rem; letter-spacing:0.2em;
+    display:flex; flex-direction:column; align-items:center; gap:8px;
+  }
+  .scroll-cue span{
+    width:1px; height:34px; background:linear-gradient(var(--gold), transparent);
+    animation:scrollpulse 2s ease-in-out infinite;
+  }
+  @keyframes scrollpulse{0%,100%{opacity:0.2;}50%{opacity:1;}}
+
+  /* ---------- Section shell ---------- */
+  section{padding:110px 0;}
+  .section-head{margin-bottom:56px; max-width:640px;}
+  .kicker{
+    font-size:0.8rem; letter-spacing:0.3em; color:var(--primary);
+    font-family:"Noto Serif TC", serif; margin-bottom:14px; text-transform:uppercase;
+  }
+  .section-head h2{font-size:clamp(1.8rem,3.6vw,2.6rem); margin-bottom:16px;}
+  .section-head p{color:var(--ink-dim); font-size:1.02rem;}
+  .alt{background:var(--bg-alt);}
+
+  /* ---------- Intro strip ---------- */
+  .intro-grid{
+    display:grid; grid-template-columns:1.1fr 0.9fr; gap:56px; align-items:center;
+  }
+  .intro-grid p{color:var(--ink-dim); margin-bottom:16px; font-size:1.02rem;}
+  .intro-grid p b{color:var(--ink); font-weight:500;}
+  .stat-card{
+    background:var(--panel); border:1px solid var(--line); border-radius:4px;
+    padding:22px 24px;
+    backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+  }
+  .stat-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  .stat-num{
+    font-family:"Noto Serif TC",serif; font-size:1.6rem; color:var(--gold); font-weight:700;
+  }
+  .stat-label{font-size:0.82rem; color:var(--ink-faint); margin-top:4px;}
+
+  /* ---------- Term panel ---------- */
+  .term-panel{
+    background:var(--panel); border:1px solid var(--line); border-radius:6px;
+    padding:28px 26px; backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+  }
+  .term-list{list-style:none;}
+  .term-list li{
+    padding:12px 0; border-top:1px solid var(--line); display:grid; grid-template-columns:130px 1fr; gap:16px;
+  }
+  .term-list li:first-child{border-top:none; padding-top:0;}
+  .term-list b{color:var(--gold); font-family:"Noto Serif TC",serif; font-weight:700; font-size:0.95rem;}
+  .term-list span{color:var(--ink-dim); font-size:0.92rem;}
+
+  /* ---------- Map / route panels ---------- */
+  .route-map-panel{
+    background:var(--panel); border:1px solid var(--line); border-radius:6px;
+    padding:24px 20px 16px; backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+    margin-bottom:44px;
+  }
+  .route-map-panel svg{width:100%; height:auto; display:block; max-width:460px; margin:0 auto;}
+  .map-caption{color:var(--ink-faint); font-size:0.82rem; margin-top:14px; text-align:center;}
+
+  /* ---------- Timeline ---------- */
+  .timeline{position:relative; margin-top:10px;}
+  .timeline::before{
+    content:""; position:absolute; left:150px; top:6px; bottom:6px; width:1px;
+    background:linear-gradient(var(--primary), var(--gold), transparent);
+  }
+  .t-row{display:grid; grid-template-columns:150px 1fr; gap:30px; position:relative; padding:0 0 40px 0;}
+  .t-row:last-child{padding-bottom:0;}
+  .t-year{
+    font-family:"Noto Serif TC",serif; color:var(--gold); font-weight:700; font-size:0.94rem;
+    text-align:right; padding-top:2px;
+  }
+  .t-body{position:relative; padding-left:28px;}
+  .t-body::before{
+    content:""; position:absolute; left:-5px; top:8px; width:9px; height:9px;
+    border-radius:50%; background:var(--primary); box-shadow:0 0 0 4px var(--bg);
+  }
+  .t-body h4{font-size:1.05rem; margin-bottom:6px; color:var(--ink);}
+  .t-body p{color:var(--ink-dim); font-size:0.96rem;}
+
+  /* ---------- Feature (image + text) ---------- */
+  .feature{
+    display:grid; grid-template-columns:0.9fr 1.1fr; gap:0;
+    border:1px solid var(--line); border-radius:6px; overflow:hidden;
+    background:var(--panel);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+  }
+  .feature img{height:100%; object-fit:cover; min-height:340px;}
+  .feature-body{padding:44px 44px;}
+  .feature-body h3{font-size:1.5rem; margin-bottom:16px;}
+  .feature-body p{color:var(--ink-dim); margin-bottom:14px;}
+
+  /* ---------- Spot grid ---------- */
+  .spot-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:2px; background:var(--line); border:1px solid var(--line); border-radius:6px; overflow:hidden;}
+  .spot{background:var(--panel); padding:32px 30px; backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);}
+  .spot-num{font-family:"Noto Serif TC",serif; color:var(--primary); font-size:0.85rem; letter-spacing:0.1em; margin-bottom:10px;}
+  .spot h4{font-size:1.2rem; margin-bottom:6px;}
+  .spot .spot-kami{color:var(--gold); font-size:0.85rem; margin-bottom:12px; display:block;}
+  .spot p{color:var(--ink-dim); font-size:0.95rem;}
+  .spot p+p{margin-top:8px;}
+
+  /* ---------- Banner ---------- */
+  .banner{
+    position:relative; min-height:64vh; display:flex; align-items:center; overflow:hidden;
+  }
+  .banner img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;}
+  .banner::after{
+    content:""; position:absolute; inset:0;
+    background:linear-gradient(90deg, rgba(8,14,16,0.92) 10%, rgba(8,14,16,0.35) 60%, rgba(8,14,16,0.15) 100%);
+  }
+  .banner .wrap{position:relative; z-index:2;}
+  .banner-box{max-width:490px;}
+  .banner-box .kicker{color:var(--gold);}
+  .banner-box h2{font-size:clamp(1.7rem,3.4vw,2.3rem); margin-bottom:16px;}
+  .banner-box p{color:var(--ink-dim);}
+
+  /* ---------- Guide cards ---------- */
+  .guide-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  .guide-card{
+    background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:28px 26px;
+    backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+  }
+  .guide-card .icon{
+    width:40px; height:40px; border-radius:50%; background:var(--primary-soft); color:var(--primary);
+    display:flex; align-items:center; justify-content:center; font-size:1.1rem; margin-bottom:16px;
+  }
+  .guide-card h4{font-size:1.05rem; margin-bottom:10px;}
+  .guide-card p{color:var(--ink-dim); font-size:0.92rem;}
+  .guide-card p+p{margin-top:8px;}
+
+  /* ---------- Route steps ---------- */
+  .route{margin-top:12px;}
+  .route-step{
+    display:grid; grid-template-columns:44px 1fr; gap:20px; padding:20px 0; border-top:1px solid var(--line);
+  }
+  .route-step:first-child{border-top:none;}
+  .route-dot{
+    width:36px; height:36px; border-radius:50%; border:1px solid var(--gold); color:var(--gold);
+    display:flex; align-items:center; justify-content:center; font-family:"Noto Serif TC",serif; font-size:0.9rem;
+  }
+  .route-step h4{font-size:1.02rem; margin-bottom:6px; display:flex; gap:10px; align-items:baseline; flex-wrap:wrap;}
+  .route-step h4 .time{font-size:0.78rem; color:var(--ink-faint); font-weight:400; font-family:"Noto Sans TC",sans-serif;}
+  .route-step p{color:var(--ink-dim); font-size:0.92rem;}
+
+  /* ---------- Info table ---------- */
+  .info-table{width:100%; border-collapse:collapse; font-size:0.95rem;}
+  .info-table tr{border-top:1px solid var(--line);}
+  .info-table tr:first-child{border-top:none;}
+  .info-table td{padding:14px 10px; color:var(--ink-dim); vertical-align:top;}
+  .info-table td:first-child{color:var(--gold); width:160px; font-family:"Noto Serif TC",serif; white-space:nowrap;}
+
+  /* ---------- Chips ---------- */
+  .chip-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:18px;}
+  .chip{
+    background:var(--gold-soft); border:1px solid rgba(201,150,61,0.35); color:var(--gold);
+    padding:8px 18px; border-radius:999px; font-size:0.88rem;
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:#0a1418; padding:60px 0 34px; border-top:1px solid var(--line);
+  }
+  footer .wrap{display:flex; flex-direction:column; gap:18px; align-items:flex-start;}
+  footer h3{font-size:1.3rem;}
+  footer p{color:var(--ink-faint); font-size:0.86rem; max-width:520px;}
+  .src-list{list-style:none; margin-top:6px;}
+  .src-list li{color:var(--ink-faint); font-size:0.82rem; margin-bottom:4px;}
+  .src-list a{color:var(--ink-dim);}
+
+  @media (max-width:860px){
+    .intro-grid{grid-template-columns:1fr;}
+    .feature{grid-template-columns:1fr;}
+    .feature img{min-height:240px;}
+    .spot-grid{grid-template-columns:1fr;}
+    .guide-grid{grid-template-columns:1fr;}
+    .timeline::before{left:78px;}
+    .t-row{grid-template-columns:78px 1fr; gap:16px;}
+    .banner{min-height:52vh;}
+    .banner .wrap{padding:0 24px;}
+    .term-list li{grid-template-columns:1fr; gap:4px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <img src="images/hero-canal.jpg" alt="富岩運河黃昏景色，一艘遊覽船緩緩駛過，運河兩岸霓虹倒影，遠處立山連峰輪廓">
+  <div class="hero-content">
+    <div class="hero-eyebrow">富山市・運河與環水公園</div>
+    <h1>富岩運河
+      <small>FUGAN CANAL — 從防洪運河到世界最美星巴克的百年蛻變</small>
+    </h1>
+    <p class="hero-desc">富山曾是一座因水患而獨立建省的城市。1935年，這座城市把治水工程直接蓋成了新市區，開鑿出一條連接市中心與富山灣的運河。它繁華過、沒落過，一度淪為淤積腐臭的貯木場，最後卻被市民從填平的命運裡搶救回來，改建成今天擁有「世界最美星巴克」美譽的富岩運河環水公園。</p>
+    <div class="hero-tags">
+      <span class="tag">富山縣富山市</span>
+      <span class="tag">全長5.1km</span>
+      <span class="tag">1935年（昭和10年）通航</span>
+      <span class="tag">中島閘門・國家重要文化財</span>
+    </div>
+  </div>
+  <div class="scroll-cue"><span></span>SCROLL</div>
+</header>
+
+<!-- ================= OVERVIEW ================= -->
+<section>
+  <div class="wrap">
+    <div class="intro-grid">
+      <div>
+        <div class="kicker">Overview</div>
+        <h2 style="margin-bottom:22px;">一座因水患獨立建省的城市，<br>把治水工程蓋成了新市區</h2>
+        <p>翻開富山的建省史會發現，這座城市與神通川的恩怨，比運河本身還要早得多。1883年（明治16年），富山之所以能從石川縣分離獨立成為一個縣，很大一部分原因，就是地方仕紳受夠了石川縣政府把稅金優先花在金澤，卻遲遲不願正視富山境內神通川反覆氾濫的治水問題——換句話說，<b>富山縣的誕生，本身就是一場治水運動的產物</b>。</p>
+        <p>富岩運河，正是這段治水史半個世紀之後最具體的成果。1928年，內務省技師<b>赤司貫一</b>提出一份把「開鑿運河、土地區劃整理、街路與公園建設」三件事同時完成的都市計畫，被當時內務省幹部評為「日本首見的嘗試」。1935年運河通航，不只解決了水患與港運，開挖出的130萬立方公尺土方，更直接填出了今天富山車站前一整片市中心。</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-grid">
+          <div>
+            <div class="stat-num">5.1km</div>
+            <div class="stat-label">運河全長</div>
+          </div>
+          <div>
+            <div class="stat-num">1935年</div>
+            <div class="stat-label">昭和10年正式通航</div>
+          </div>
+          <div>
+            <div class="stat-num">2.5m</div>
+            <div class="stat-label">中島閘門調節水位差</div>
+          </div>
+          <div>
+            <div class="stat-num">177萬圓</div>
+            <div class="stat-label">昭和10年幣值總工程費</div>
+          </div>
+          <div>
+            <div class="stat-num">130萬m³</div>
+            <div class="stat-label">挖掘土方，填地築港用</div>
+          </div>
+          <div>
+            <div class="stat-num">1998年</div>
+            <div class="stat-label">中島閘門列國家重要文化財</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= JINZU RIVER FLOOD HISTORY ================= -->
+<section class="alt">
+  <div class="wrap">
+    <div class="feature" style="margin-bottom:44px;">
+      <img src="images/jinzu-flood.jpg" alt="1900年代神通川氾濫場景，混濁洪水淹沒沿岸農田與木造房舍，工人在河岸搶修堤防">
+      <div class="feature-body">
+        <div class="kicker">Before the Canal</div>
+        <h3>「馳越線」：讓洪水自己拓寬河道</h3>
+        <p>神通川原本在今日富山大橋一帶劇烈蛇行，每逢豪雨就頻繁潰堤，是富山最頭痛的地形宿疾。明治34年（1901年）到大正11年（1922年），當局實施「馳越線」改修工程——先挖出一條僅寬2公尺、深1.5公尺的細窄水道，捷徑截彎取直，再刻意利用洪水的沖刷力，讓水流自然把這條細水道拓寬成新的主流河道。</p>
+        <p>這項工程耗時二十餘年才完全把河水移轉到新河道，原本蛇行的舊河道自此廢棄，成為一片沿著市中心蜿蜒的「廢川地」——這片閒置的舊河床，後來就是富岩運河與市中心新市街規劃的用地起點。</p>
+      </div>
+    </div>
+    <div class="term-panel">
+      <ul class="term-list">
+        <li><b>神通川馳越線</b><span>1901–1922年的人工截彎取直工程，利用洪水力量自然拓寬新河道，取代原本蛇行不定的舊河床。</span></li>
+        <li><b>廢川地</b><span>舊河道移轉後留下的閒置河床用地，後來成為富岩運河開鑿與新市街規劃的基礎。</span></li>
+        <li><b>赤司貫一（1890–1954）</b><span>內務省技師，1928年提出運河、土地區劃整理、街路公園三合一的都市計畫，是富岩運河真正的規劃者。</span></li>
+        <li><b>東岩瀬港</b><span>富山灣畔的舊港町，江戶至明治年間北前船貿易的重要據點，運河通航後與市中心連成一氣。</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HISTORY TIMELINE ================= -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">History</div>
+      <h2>從港町水患到市民公園，百年運河的起伏</h2>
+      <p>富岩運河的故事分成三段：因水患而生的規劃、因產業變遷而沒落、再因市民保留運動而重生。以下時間軸整理這條運河從構想、通航、衰敗到蛻變的關鍵節點。</p>
+    </div>
+    <div class="timeline">
+      <div class="t-row">
+        <div class="t-year">江戶～明治時代</div>
+        <div class="t-body">
+          <h4>東岩瀬港・北前船貿易全盛期</h4>
+          <p>富山灣畔的東岩瀬港，是北前船（沿日本海往返的廻船貿易船隊）重要的中繼港，廻船問屋林立，商業繁盛一時，森家等大商號的宅邸至今仍保留在岩瀬老街。</p>
+        </div>
+      </div>
+      <div class="t-row">
+        <div class="t-year">1901–1922年</div>
+        <div class="t-body">
+          <h4>神通川「馳越線」改修工程</h4>
+          <p>人工開鑿窄水道，利用洪水力量自然拓寬成新河道，耗時二十餘年才完全移轉水流，舊河床自此廢棄閒置，成為日後運河與新市街的用地基礎。</p>
+        </div>
+      </div>
+      <div class="t-row">
+        <div class="t-year">1928年（昭和3年）</div>
+        <div class="t-body">
+          <h4>赤司貫一提出三合一都市計畫</h4>
+          <p>內務省技師赤司貫一擬定「運河開鑿＋土地區劃整理＋街路公園建設」同步進行的方案，獲內務省幹部評為「日本首見的嘗試」，富山市都市計畫事業正式拍板。</p>
+        </div>
+      </div>
+      <div class="t-row">
+        <div class="t-year">1930年（昭和5年）</div>
+        <div class="t-body">
+          <h4>動工：以工代賑的失業對策事業</h4>
+          <p>運河工程於6月正式動工，適逢世界經濟大蕭條，這項工程同時被規劃為「失業對策事業」，提供大量勞動人口就業機會。</p>
+        </div>
+      </div>
+      <div class="t-row">
+        <div class="t-year">1934年（昭和9年）</div>
+        <div class="t-body">
+          <h4>中島閘門竣工</h4>
+          <p>仿巴拿馬運河式的雙重水門系統完工，用來調節上下游2.5公尺的水位落差，是當時日本國內數一數二的先進土木技術。</p>
+        </div>
+      </div>
+      <div class="t-row">
+        <div class="t-year">1935年（昭和10年）</div>
+        <div class="t-body">
+          <h4>運河通航，可容納200噸級船舶</h4>
+          <p>1月31日正式完工通航，全長5.1公里，總工程費177萬圓，挖掘的130萬立方公尺土方用來填平廢川地、造出新市街，並整備東岩瀬港岸壁。</p>
+        </div>
+      </div>
+      <div class="t-row">
+        <div class="t-year">戰後～1970年代</div>
+        <div class="t-body">
+          <h4>工業地帶的形成與衰退</h4>
+          <p>運河沿岸因地價與電費便宜，戰後吸引大量工廠進駐，形成一大工業地帶；但隨著卡車運輸興起、電費上漲、周邊住宅化與水質污染，運河利用逐漸式微，一度淪為堆置原木的貯木場，腐爛樹皮淤積孳生蚊蠅，環境每況愈下。</p>
+        </div>
+      </div>
+      <div class="t-row">
+        <div class="t-year">1984年（昭和59年）</div>
+        <div class="t-body">
+          <h4>市民保留運動，方針逆轉</h4>
+          <p>當局原本在1979年提出填平半條運河闢建道路的計畫，卻在市民反對聲浪下逆轉，改採「新都市據點整備事業」，將運河定位為都市再生的核心資產。</p>
+        </div>
+      </div>
+      <div class="t-row">
+        <div class="t-year">1997年（平成9年）</div>
+        <div class="t-body">
+          <h4>富岩運河環水公園開園</h4>
+          <p>7月，歷經「富山市MIRAI計畫」多年水岸再生工程，沒落的工業運河搖身一變成為今日綠意盎然、以天門橋與湖畔星巴克聞名的市民公園。</p>
+        </div>
+      </div>
+      <div class="t-row">
+        <div class="t-year">1998年（平成10年）</div>
+        <div class="t-body">
+          <h4>中島閘門列國家重要文化財</h4>
+          <p>這座仍在運作、調節2.5公尺水位差的巴拿馬式雙重水門，正式被指定為國家重要文化財，成為日本少數現役運作的近代閘門文化資產之一。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= NAKAJIMA LOCK BANNER ================= -->
+<section class="banner">
+  <img src="images/nakajima-lock.jpg" alt="中島閘門特寫，一艘遊覽船正通過巴拿馬運河式雙重水門，可見水位差">
+  <div class="wrap">
+    <div class="banner-box">
+      <div class="kicker">Water Elevator</div>
+      <h2>中島閘門：一部運作中的「水電梯」</h2>
+      <p>中島閘門仿照巴拿馬運河原理設計，靠一前一後兩對水門調節上下游2.5公尺的水位落差：船隻先駛入閘室，關上後方水門，再放水調整水位，等閘室內外水面齊平，前方水門才會開啟——整個過程就像搭乘一部緩慢的「水電梯」。1934年完工至今，它仍是日常運作中的現役設施，1998年更被指定為國家重要文化財，是全日本少數仍在服役的近代巴拿馬式閘門之一。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LANDMARKS SPOT GRID ================= -->
+<section class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Landmarks</div>
+      <h2>環水公園與岩瀬：運河兩端的今與昔</h2>
+      <p>從富山車站步行10分鐘可達的環水公園，到運河另一端保留北前船風情的岩瀬老街，這條運河串起了富山最現代與最古老的兩種面貌。</p>
+    </div>
+    <div class="spot-grid">
+      <div class="spot">
+        <div class="spot-num">01 · 水位落差地標</div>
+        <h4>中島閘門</h4>
+        <span class="spot-kami">通稱：水のエレベーター</span>
+        <p>巴拿馬運河式雙重水門，調節2.5公尺水位差，1998年指定國家重要文化財，至今仍供遊覽船實際通過體驗。</p>
+      </div>
+      <div class="spot">
+        <div class="spot-num">02 · 公園地標橋</div>
+        <h4>天門橋</h4>
+        <span class="spot-kami">環水公園南北軸線</span>
+        <p>橫跨運河的白色斜張橋，兩端瞭望塔可眺望立山連峰與公園全景，塔間設有「戀人聖地」認證的紅色電話。</p>
+      </div>
+      <div class="spot">
+        <div class="spot-num">03 · 世界最美星巴克</div>
+        <h4>星巴克環水公園店</h4>
+        <span class="spot-kami">2008年美國Starbucks年度店鋪設計獎</span>
+        <p>以「水與草坪延伸的休憩之地」為概念設計，玻璃帷幕面向運河而建，獲選為「地域地標店」，是近年富山最熱門的打卡地標。</p>
+      </div>
+      <div class="spot">
+        <div class="spot-num">04 · 北前船港町</div>
+        <h4>岩瀬老街</h4>
+        <span class="spot-kami">廻船問屋・森家（國家重要文化財）</span>
+        <p>江戶至明治年間北前船貿易全盛期的港町街景，森家宅邸建於明治11年（1878年），保留屋久杉板戶、能登黑松梁柱等傳統町屋工藝。</p>
+      </div>
+      <div class="spot" style="grid-column:1 / -1;">
+        <div class="spot-num">05 · 串連運河兩端</div>
+        <h4>富岩水上ライン</h4>
+        <span class="spot-kami">環水公園 ↔ 中島閘門 ↔ 岩瀬・約1小時航程</span>
+        <p>連接環水公園與岩瀬的運河遊船，途中會實際通過中島閘門體驗水位升降，由縣營客船「kansui」「fugan」「sora」與市營電動船「もみじ」共4艘船雙向往返運行，是重新走一遍運河身世最直接的方式。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= AKASHI FEATURE ================= -->
+<section>
+  <div class="wrap">
+    <div class="feature">
+      <img src="images/akashi-planner.jpg" alt="1920年代日本都市計畫技師伏案審視運河與街廓藍圖，桌上攤開富山市都市計畫圖紙">
+      <div class="feature-body">
+        <div class="kicker">The Planner</div>
+        <h3>赤司貫一：把三件事一次做完的規劃者</h3>
+        <p>赤司貫一（1890–1954）任職內務省技師期間，接下了富山這座長年苦於水患的城市的都市計畫案。他沒有把「開鑿運河」「填地造鎮」「建設街路公園」拆成三個各自獨立的工程，而是提出一份三者同步進行的整合方案——用運河開挖的土方直接填出新市街，再一併規劃道路綠地，讓治水建設本身就是都市規劃的骨架。</p>
+        <p>當時內務省幹部對此讚譽為「日本首見的嘗試」，這也是為什麼今天富山車站前的縣廳、市役所、NHK等機構林立的市中心地帶，其實就站在昭和初年這場運河工程填出來的土地上。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DECLINE & REVIVAL ================= -->
+<section class="alt">
+  <div class="wrap">
+    <div class="intro-grid" style="align-items:start;">
+      <div>
+        <div class="kicker">Decline & Revival</div>
+        <h2 style="margin-bottom:22px;">從貯木場到市民公園</h2>
+        <p>運河通航後的三十年，沿岸憑藉低廉地價與電費吸引大批工廠進駐，一度形成富山最重要的工業地帶。但進入高度經濟成長期後，卡車運輸取代水運、電費上漲、周邊住宅化與水質污染接踵而至，運河的產業機能迅速式微，最終淪為堆置原木的貯木場——腐爛樹皮長年淤積水面，成為蚊蠅孳生的環境死角。</p>
+        <p>1979年，當局一度提出填平半條運河改建道路的計畫，卻在市民強烈反對下於1984年逆轉方向，轉而推動「新都市據點整備事業」。歷經1988年「富山市MIRAI計畫」的水岸再生工程，這條沒落的工業運河終於在1997年脫胎換骨，開闢成今日以天門橋與湖畔星巴克聞名的富岩運河環水公園。</p>
+      </div>
+      <div class="term-panel">
+        <div class="kicker" style="margin-bottom:12px;">Turning Point</div>
+        <p style="color:var(--ink-dim); font-size:0.95rem;">1984年的保留決定，是這條運河命運的分水嶺——如果當初填平計畫照原案執行，今天就不會有天門橋、環水公園，也不會有那間被譽為「世界最美」的星巴克。市民的反對聲浪，直接把一條瀕臨消失的工業水道，變成了富山最具代表性的城市名片。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EVENING PARK BANNER ================= -->
+<section class="banner">
+  <img src="images/kansui-park-evening.jpg" alt="富岩運河環水公園黃昏景色，天門橋亮燈，玻璃帷幕星巴克倒映運河水面，立山連峰剪影">
+  <div class="wrap">
+    <div class="banner-box">
+      <div class="kicker">Evening</div>
+      <h2>天門橋亮燈後，運河換上另一張臉</h2>
+      <p>白天的環水公園是野餐與散步的市民日常，入夜後燈光亮起，天門橋與湖畔星巴克的倒影浮在運河水面上，遠處立山連峰在暮色中只剩剪影——這一幕正是「世界最美星巴克」稱號最直接的由來，也是這條運河從沒落工業水道走到今天最戲劇化的證明。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TRAVEL GUIDE ================= -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Travel Guide</div>
+      <h2>富岩運河攻略：交通・遊船・時機</h2>
+      <p>環水公園步行即可深度遊覽，若想連岩瀬老街與運河遊船一起排入，建議安排半天到一天。</p>
+    </div>
+
+    <div class="guide-grid" style="margin-bottom:56px;">
+      <div class="guide-card">
+        <div class="icon">🚶</div>
+        <h4>交通方式</h4>
+        <p>從JR富山駅北口步行約10分鐘即達環水公園，是市區內最容易抵達的景點之一。</p>
+        <p>前往岩瀬老街可搭乘富山地方鉄道富山港線至終點岩瀬濱駅，或直接搭乘富岩水上ライン遊船抵達。</p>
+      </div>
+      <div class="guide-card">
+        <div class="icon">🚤</div>
+        <h4>富岩水上ライン</h4>
+        <p>環水公園至岩瀬約1小時航程，途中實際通過中島閘門體驗水位升降，分中島便、岩瀬便等航段，建議事先查詢當日時刻與是否停駛。</p>
+      </div>
+      <div class="guide-card">
+        <div class="icon">🌇</div>
+        <h4>最佳造訪時機</h4>
+        <p>傍晚天門橋與湖畔星巴克的燈光倒影最具代表性；春季沿岸櫻花、秋季紅葉倒映水面，也各有不同風景。</p>
+      </div>
+    </div>
+
+    <div class="section-head" style="margin-bottom:32px;">
+      <h3 style="font-family:'Noto Serif TC',serif; font-size:1.4rem;">建議散策路線（步行＋遊船約半天）</h3>
+    </div>
+
+    <div class="route-map-panel">
+      <svg viewBox="0 0 320 700" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="富岩運河建議散策路線動線圖，共六個停留點">
+        <path d="M160,45 Q100,110 135,160 Q175,215 175,265 Q175,315 140,370 Q100,425 145,480 Q185,530 160,590 Q140,635 170,660" fill="none" stroke="rgba(201,150,61,0.35)" stroke-width="3" stroke-linecap="round" stroke-dasharray="1,10"/>
+
+        <circle cx="160" cy="45" r="17" fill="rgba(201,150,61,0.16)" stroke="#c9963d" stroke-width="2"/>
+        <text x="160" y="50" text-anchor="middle" font-size="15" font-weight="700" fill="#c9963d" font-family="'Noto Serif TC',serif">1</text>
+        <text x="190" y="41" font-size="14" font-weight="700" fill="#e7eef0" font-family="'Noto Serif TC',serif">富山駅北口</text>
+        <text x="190" y="61" font-size="11.5" fill="#7f9498">出發點・步行10分</text>
+
+        <circle cx="135" cy="160" r="17" fill="rgba(201,150,61,0.16)" stroke="#c9963d" stroke-width="2"/>
+        <text x="135" y="165" text-anchor="middle" font-size="15" font-weight="700" fill="#c9963d" font-family="'Noto Serif TC',serif">2</text>
+        <text x="165" y="156" font-size="14" font-weight="700" fill="#e7eef0" font-family="'Noto Serif TC',serif">天門橋</text>
+        <text x="165" y="176" font-size="11.5" fill="#7f9498">公園地標橋</text>
+
+        <circle cx="175" cy="265" r="17" fill="rgba(201,150,61,0.16)" stroke="#c9963d" stroke-width="2"/>
+        <text x="175" y="270" text-anchor="middle" font-size="15" font-weight="700" fill="#c9963d" font-family="'Noto Serif TC',serif">3</text>
+        <text x="205" y="261" font-size="14" font-weight="700" fill="#e7eef0" font-family="'Noto Serif TC',serif">星巴克環水公園店</text>
+        <text x="205" y="281" font-size="11.5" fill="#7f9498">世界最美星巴克</text>
+
+        <circle cx="140" cy="370" r="17" fill="rgba(47,143,163,0.18)" stroke="#2f8fa3" stroke-width="2"/>
+        <text x="140" y="375" text-anchor="middle" font-size="15" font-weight="700" fill="#2f8fa3" font-family="'Noto Serif TC',serif">4</text>
+        <text x="170" y="366" font-size="14" font-weight="700" fill="#e7eef0" font-family="'Noto Serif TC',serif">搭乘富岩水上ライン</text>
+        <text x="170" y="386" font-size="11.5" fill="#7f9498">乘船出發</text>
+
+        <circle cx="145" cy="480" r="17" fill="rgba(47,143,163,0.18)" stroke="#2f8fa3" stroke-width="2"/>
+        <text x="145" y="485" text-anchor="middle" font-size="15" font-weight="700" fill="#2f8fa3" font-family="'Noto Serif TC',serif">5</text>
+        <text x="175" y="476" font-size="14" font-weight="700" fill="#e7eef0" font-family="'Noto Serif TC',serif">中島閘門</text>
+        <text x="175" y="496" font-size="11.5" fill="#7f9498">水位升降體驗</text>
+
+        <circle cx="170" cy="660" r="18" fill="rgba(178,58,46,0.16)" stroke="#a0522d" stroke-width="2.5"/>
+        <text x="170" y="665" text-anchor="middle" font-size="15" font-weight="700" fill="#a0522d" font-family="'Noto Serif TC',serif">6</text>
+        <text x="200" y="656" font-size="14" font-weight="700" fill="#e7eef0" font-family="'Noto Serif TC',serif">岩瀬老街</text>
+        <text x="200" y="676" font-size="11.5" fill="#7f9498">終點・北前船港町</text>
+      </svg>
+      <p class="map-caption">從富山駅步行至環水公園，搭遊船通過中島閘門後抵達岩瀬，實際航班時刻請以富岩水上ライン官網公告為準。</p>
+    </div>
+
+    <div class="route">
+      <div class="route-step">
+        <div class="route-dot">1</div>
+        <div>
+          <h4>富山駅北口 <span class="time">出發點</span></h4>
+          <p>從富山駅北口步行約10分鐘，是全程最容易抵達的起點。</p>
+        </div>
+      </div>
+      <div class="route-step">
+        <div class="route-dot">2</div>
+        <div>
+          <h4>天門橋 <span class="time">公園地標</span></h4>
+          <p>登上瞭望塔眺望環水公園全景與立山連峰輪廓，順道體驗塔間的紅色戀人電話。</p>
+        </div>
+      </div>
+      <div class="route-step">
+        <div class="route-dot">3</div>
+        <div>
+          <h4>星巴克環水公園店 <span class="time">世界最美星巴克</span></h4>
+          <p>面向運河的玻璃帷幕座位，是稍作休息、拍照打卡的最佳地點。</p>
+        </div>
+      </div>
+      <div class="route-step">
+        <div class="route-dot">4</div>
+        <div>
+          <h4>搭乘富岩水上ライン <span class="time">乘船出發</span></h4>
+          <p>從環水公園碼頭登船，沿運河一路航向岩瀬，途中會實際降下水門。</p>
+        </div>
+      </div>
+      <div class="route-step">
+        <div class="route-dot">5</div>
+        <div>
+          <h4>中島閘門 <span class="time">水位升降體驗</span></h4>
+          <p>親身體驗巴拿馬式雙重水門調節2.5公尺水位差的「水電梯」過程。</p>
+        </div>
+      </div>
+      <div class="route-step">
+        <div class="route-dot">6</div>
+        <div>
+          <h4>岩瀬老街 <span class="time">終點・北前船港町</span></h4>
+          <p>下船後散步舊街道，走訪國家重要文化財森家宅邸，感受江戶到明治的港町風情。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HOURS + NEARBY ================= -->
+<section class="alt">
+  <div class="wrap">
+    <div class="intro-grid" style="align-items:start;">
+      <div>
+        <div class="kicker">Hours</div>
+        <h2 style="margin-bottom:22px;">實用資訊</h2>
+        <table class="info-table">
+          <tr><td>環水公園</td><td>全天開放，免費入場，無公休日</td></tr>
+          <tr><td>富岩水上ライン</td><td>依季節調整班次，冬季部分航段停駛，實際時刻與票價請查官網</td></tr>
+          <tr><td>中島閘門通過體驗</td><td>約需10–15分鐘（含等候水位調節），僅隨遊船航程體驗，無法單獨參觀操作</td></tr>
+          <tr><td>星巴克環水公園店</td><td>營業時間依店家公告為準，建議避開假日午後排隊人潮</td></tr>
+          <tr><td>岩瀬・森家</td><td>對外開放參觀，實際時間與休館日請查詢富山市官方觀光資訊</td></tr>
+        </table>
+      </div>
+      <div>
+        <div class="kicker">Nearby</div>
+        <h2 style="margin-bottom:22px;">如果還有半天</h2>
+        <table class="info-table">
+          <tr><td>富山縣美術館</td><td>就位於環水公園旁，建築與戶外草坪本身也是熱門拍照點。</td></tr>
+          <tr><td>岩瀬老街散策</td><td>除了森家，沿街還有多間酒藏與傳統町屋建築可順道走訪。</td></tr>
+          <tr><td>富山市中心步行圈</td><td>富岩運河填地造出的市中心一帶，縣廳、市役所、路面電車皆可步行串聯。</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SOUVENIR / CHIPS ================= -->
+<section>
+  <div class="wrap">
+    <div class="kicker">Around the Canal</div>
+    <h2 style="margin-bottom:22px;">運河兩端值得多留意的細節</h2>
+    <p style="color:var(--ink-dim); max-width:640px;">這條運河串起的不只是一條水路，更是富山從水患到工業、再到今天觀光城市的整條發展軸線。散步時不妨留意這些容易被忽略的角落。</p>
+    <div class="chip-row">
+      <span class="chip">中島閘門・水のエレベーター</span>
+      <span class="chip">天門橋・戀人聖地</span>
+      <span class="chip">世界最美星巴克</span>
+      <span class="chip">岩瀬老街・森家北前船文化</span>
+      <span class="chip">富岩水上ライン四船巡航</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <h3>富岩運河</h3>
+    <p>富山市連接市中心與富山灣的百年運河，從治水建設走到市民公園的都市再生故事。本頁內容整理自富山縣官方網站、環水公園公式網站、富岩水上ライン公式網站、Wikipedia等公開資料，圖片為AI生成之示意插畫，僅供氛圍參考，實際造訪請以現場與官方資訊為準。</p>
+    <ul class="src-list">
+      <li>資料來源：<a href="https://www.pref.toyama.jp/1541/kendodukuri/dourokouwan/toyamakou/kj00016047.html" target="_blank" rel="noopener">富山県｜富岩運河の建設と利用の歴史</a></li>
+      <li>資料來源：<a href="http://www.kansui-park.jp/what-is-kansui-park/the-history-of-the-fugan-canal-and-kansui-park/" target="_blank" rel="noopener">富岩運河環水公園公式｜富岩運河の歴史と環水公園</a></li>
+      <li>資料來源：<a href="https://matsukawa-cruise.jp/fuganunga/fuganunga-history.html" target="_blank" rel="noopener">松川遊覧船｜富岩運河の歴史</a></li>
+      <li>資料來源：<a href="https://ja.wikipedia.org/wiki/%E5%AF%8C%E5%B2%A9%E9%81%8B%E6%B2%B3" target="_blank" rel="noopener">Wikipedia「富岩運河」</a></li>
+      <li>資料來源：<a href="https://fugan-suijo-line.jp/" target="_blank" rel="noopener">富岩水上ライン公式網站</a></li>
+      <li>資料來源：<a href="https://www.city.toyama.lg.jp/shisei/shisetsu/1011038/1011039/1008102.html" target="_blank" rel="noopener">富山市公式｜北前船廻船問屋森家</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>
